@@ -20,7 +20,7 @@ getRandomIntInclusive(9, 11);
 //Функция для проверки максимальной длины строки
 
 function getLength (description, length) {
-  return description.length <= length ? true : false;
+  return description.length <= length;
 }
 
 getLength('Текстовый комментарий', 140);
