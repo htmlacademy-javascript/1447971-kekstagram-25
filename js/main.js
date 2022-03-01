@@ -31,7 +31,6 @@ function getListElements(counter) {
     const newElem = i;
     newArray.push(newElem);
   }
-  console.log(newArray);
   return newArray;
 }
 
@@ -39,9 +38,8 @@ const ID_ARRAY = getListElements(25);
 const AVATAR_ARRAY = getListElements(6);
 
 //даёт одно значение из массива
-const getRandomArrayElement = (elements) => {
-  return elements[getRandomPositiveInteger(0, elements.length - 1)];
-};
+const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
+
 
 function getUrl(array) {
   let url = '';
@@ -69,7 +67,8 @@ const CREATE_DESCRIPTION = () => {
       message: getRandomArrayElement(MESSAGE_ARRAY),
       name: getRandomArrayElement(NAME_ARRAY)
     }]
-  }
-}
+  };
+};
 
 const DESCRIPTION_OF_PHOTO = Array.from({length: DESCRIPTION_NUMBER}, CREATE_DESCRIPTION);
+CREATE_DESCRIPTION();
