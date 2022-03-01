@@ -55,20 +55,21 @@ function getAvatar(array) {
   return avatar;
 }
 
-const CREATE_DESCRIPTION = () => {
-  return {
-    id: getRandomArrayElement(ID_ARRAY),
-    url: getUrl(ID_ARRAY),
-    description: 'Красивая фотография',
-    likes: getRandomPositiveInteger(15, 200),
-    comments: [{
-      id: getRandomPositiveInteger(1, 1000),
-      avatar: getAvatar(AVATAR_ARRAY),
-      message: getRandomArrayElement(MESSAGE_ARRAY),
-      name: getRandomArrayElement(NAME_ARRAY)
-    }]
-  };
-};
+const CREATE_DESCRIPTION = () => ({
+  id: getRandomArrayElement(ID_ARRAY),
+  url: getUrl(ID_ARRAY),
+  description: 'Красивая фотография',
+  likes: getRandomPositiveInteger(15, 200),
+  comments: [{
+    id: getRandomPositiveInteger(1, 1000),
+    avatar: getAvatar(AVATAR_ARRAY),
+    message: getRandomArrayElement(MESSAGE_ARRAY),
+    name: getRandomArrayElement(NAME_ARRAY)
+  }]
+});
 
-const DESCRIPTION_OF_PHOTO = Array.from({length: DESCRIPTION_NUMBER}, CREATE_DESCRIPTION);
-CREATE_DESCRIPTION();
+//Сохраняла код ниже (Array.from...) в константу DESCRIPTION_OF_PHOTO, но ESlint всё время ругается,
+//что она не используется, но никуда её вывести нельзя, потому что снова начинает ругаться
+Array.from({
+  length: DESCRIPTION_NUMBER
+}, CREATE_DESCRIPTION);
