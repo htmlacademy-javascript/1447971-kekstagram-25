@@ -1,3 +1,3 @@
-import {DESCRIPTION_OF_PHOTO} from './create-description.js';
+import {createDescriptions} from './create-description.js';
 
-DESCRIPTION_OF_PHOTO();
+createDescriptions();

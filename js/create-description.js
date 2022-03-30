@@ -16,7 +16,7 @@ const DESCRIPTION_NUMBER = 25;
 const ID_ARRAY = getListElements(25);
 const AVATAR_ARRAY = getListElements(6);
 
-const CREATE_DESCRIPTION = () => ({
+const createDescription = () => ({
   id: getRandomArrayElement(ID_ARRAY),
   url: getUrl(ID_ARRAY),
   description: 'Красивая фотография',
@@ -29,8 +29,8 @@ const CREATE_DESCRIPTION = () => ({
   }]
 });
 
-const DESCRIPTION_OF_PHOTO = () => Array.from({
+const createDescriptions = () => Array.from({
   length: DESCRIPTION_NUMBER
-}, CREATE_DESCRIPTION);
+}, createDescription);
 
-export {DESCRIPTION_OF_PHOTO};
+export {createDescriptions};
